@@ -8,7 +8,7 @@ El presente pretende ser una guía / recoratorio de las mejores practicas para M
 * nombres en inglés una o dos palabras de preferencia
 * nombres en singular
 * descriptivos no importa si son largos no mas de 64 caracteres
-* para SP, Funciones y Triggers usar postfojo _sp, _fn, y _tg  respectivamente
+* para SP, Funciones y Triggers usar postfijo _sp, _fn, y _tg  respectivamente
 * para las keys elNombreTablaId
 
 #### Evitar!!
@@ -18,16 +18,16 @@ El presente pretende ser una guía / recoratorio de las mejores practicas para M
 * nombre iguales para tablas y campos
 
 ### Uso
-* Todas las tablas deben de tener un Primary Key (PK) y debe de ser el primer campo de la tabla y debe de ser único e irrepetiblem, de preferencia un entero.
+* Todas las tablas deben de tener un Primary Key (PK) y debe de ser el primer campo de la tabla y debe de ser único e irrepetible, de preferencia un entero.
 * Tipos de datos en base a la naturaleza de los datos
 * Utiliza CHAR(1) en lugar de VARCHAR(1) porque VARCHAR(1) se llevará un byte adicional para almacenar información
 * Tipo CHAR para almacenar solo los datos de longitud fija
-* Formato AAAA-MM-DD o el formato de fecha ISO que se adapte a su motor de SQL
-* Usa LIMIT 1 Cuando sólo quieras una única fila
+* Formato AAAA-MM-DD o el formato de fecha ISO que se adapte a al motor de SQL
+* Usa LIMIT 1 Cuando sólo quieras una única fila (eficienta la consulta)
 * Indexa, y utiliza el mismo tipo de columna para los Join
 * Usa NOT NULL y default
 * Los campos de ESTATUS deben de estar comentados con valores, tratar de usar strings de 10 caracteres e indexados, por ejemplo 'ACTIVO' en luegar de claves
-* Procurar tablas de tamaño fijo
+* Procurar tablas de tamaño fijo (se define si todos sus campos tienen tamaño fijo)
 * Almacena las direcciones IP como UNSIGNED INT
 * El uso de transacciones es obligatorio cuando se inserta, actualiza o se elimina
 * Separa toda la lógica de negocio de la base. La base de datos es eso, un lugar en donde se almacenan y se consultan datos.
