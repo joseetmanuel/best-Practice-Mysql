@@ -62,11 +62,14 @@ El presente pretende ser una guía / recoratorio de las mejores practicas para M
   3. No hay filas duplicadas.
   4. Cada intersección de fila-y-columna contiene exactamente un valor del dominio aplicable (y nada más).
   5. Todas las columnas son regulares es decir, las filas no tienen componentes como IDs de fila, IDs de objeto, o timestamps ocultos.
-* Segunda forma normal: Cada columna de una tabla está relacionada con todas las columnas de la clave primaria y no solo por una combinación de parte de la clave primaria
-* Tercera forma normal: Cada columna de una tabla está relacionada directamente con las columnas de la clave primaria, no de forma transitiva a través de otro campo
-* Forma normal de Boyce-Codd, BCNF: Una tabla está en BCNF y está en 3FN y todos los campos tienen como deteminante (dependen) la clave primaria.
-* Cuarta forma normal: No existen dos o más relaciones independientes en una misma tabla
-* Quinta forma normal: 
-* Sexta forma normal:
-* Forma normal de dominio/clave, DNFN
+* Segunda forma normal: Una tabla 1NF está en 2NF si y solo si, dada una clave primaria y cualquier atributo que no sea un constituyente de la clave primaria, el atributo no clave depende de toda la clave primaria en vez de solo de una parte de ella.
+* Tercera forma normal: Una tabla 2NF está en 3NF si y solo si las las condiciones siguientes se cumplen:
+  1. Ningún atributo no-primario de la tabla es dependiente transitivamente de una clave primaria
+  2. Es una relación que no incluye ningún atributo clave
+* Forma normal de Boyce-Codd, BCNF:L a forma normal de Boyce-Codd requiere que no existan dependencias funcionales no triviales de los atributos que no sean un conjunto de la clave candidata.
+* Cuarta forma normal: Una tabla está en 4FN si y solo si esta en Tercera forma normal o en FNBC (Cualquiera de ambas) y no posee dependencias multivaluadas no triviales
+* Quinta forma normal: Una tabla se dice que está en 5NF si y sólo si está en 4NF y cada dependencia de unión (join) en ella es implicada por las claves candidatas.
+* Forma normal de dominio/clave, DKNF: Una restricción del dominio especifica los valores permitidos para un atributo dado, mientras que una restricción clave especifica los atributos que identifican únicamente una fila en una tabla dada.
+* Sexta forma normal: Una base de datos cumplirá con la sexta forma de normalización si y solo si se encuentra en la 5FN y cada dependencia de la relación sea trivial.
+
 
